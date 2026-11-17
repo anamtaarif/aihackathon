@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediCare AI | Your Health Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-icon">✚</span><span>MediCare<span class="brand-ai"> AI</span><small>YOUR HEALTH COMPANION</small></span></a>
+    <div class="side-label">MENU</div>
+    <button class="nav-item active" data-view="home"><span>⌂</span> Overview</button>
+    <button class="nav-item" data-view="assistant"><span>✧</span> AI Assistant <i class="new-tag">NEW</i></button>
+    <button class="nav-item" data-view="records"><span>▤</span> Health Records</button>
+    <div class="side-label tools-label">YOUR HEALTH</div>
+    <button class="nav-item" data-view="assessment"><span>♡</span> Health Assessment</button>
+    <button class="nav-item" data-view="about"><span>ⓘ</span> About MediCare</button>
+    <div class="sidebar-bottom">
+      <div class="help-card"><div class="help-icon">☏</div><b>Need urgent help?</b><p>If symptoms feel severe or life-threatening, contact local emergency services immediately.</p></div>
+      <div class="profile-mini"><div class="avatar">G</div><div><b>Guest User</b><small>Personal health space</small></div><span>•••</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuBtn">☰</button>
+      <div class="crumb">Workspace <span>/</span> <b id="crumbName">Overview</b></div>
+      <div class="top-actions"><span class="secure"><span>●</span> Private session</span><div class="top-avatar">G</div></div>
+    </header>
+
+    <section class="view active" id="home">
+      <div class="welcome-row"><div><div class="eyebrow">TUESDAY, YOUR HEALTH MATTERS</div><h1>Your health, <span>made simpler.</span></h1><p class="subheading">A calmer way to understand your health and keep your information organized.</p></div><div class="welcome-art"><div class="art-circle">✚</div><span class="float-pill pill-one">♥ Care</span><span class="float-pill pill-two">✧ AI support</span></div></div>
+      <div class="hero-card"><div class="hero-copy"><span class="hero-kicker">MEET YOUR AI HEALTH COMPANION</span><h2>Let's understand<br>how you're feeling.</h2><p>Share what's bothering you. I'll ask a few guided questions and help you organize the information for your next healthcare conversation.</p><button class="primary-btn" data-go="assistant">Start health chat <span>→</span></button></div><div class="hero-visual"><div class="halo"></div><div class="doctor-emoji">🩺</div><div class="visual-note"><span class="pulse-dot"></span> Here to help you</div></div></div>
+      <div class="section-heading"><div><h2>Your health overview</h2><p>Keep key health information in one place.</p></div><button class="text-btn" data-go="records">View records →</button></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon lavender">♡</span><span class="stat-label">PROFILE</span></div><strong id="profileStatus">Not added</strong><small>Personal information</small></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon mint">⌁</span><span class="stat-label">VITALS</span></div><strong id="vitalsStatus">Not added</strong><small>Blood pressure & sugar</small></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon peach">▤</span><span class="stat-label">HEALTH NOTES</span></div><strong id="notesStatus">0 notes</strong><small>Your saved information</small></div>
+      </div>
+      <div class="bottom-grid"><div class="panel"><div class="panel-title"><div><h3>How MediCare AI works</h3><p>Simple steps, clearer conversations.</p></div><span class="sparkle">✧</span></div><div class="steps"><div class="step"><span>01</span><div><b>Tell us how you feel</b><small>Describe symptoms in your own words.</small></div></div><div class="step"><span>02</span><div><b>Answer guided questions</b><small>Add relevant history, allergies and measurements.</small></div></div><div class="step"><span>03</span><div><b>Review your health summary</b><small>Organize details to discuss with a professional.</small></div></div></div></div><div class="panel reassurance"><div class="shield">✓</div><h3>Your information matters</h3><p>This demo stores entries only in this browser. Avoid entering highly sensitive personal information on a shared device.</p><button class="text-btn" data-go="about">Learn about safety →</button></div></div>
+    </section>
+
+    <section class="view" id="assistant">
+      <div class="page-heading"><div class="eyebrow">AI HEALTH COMPANION</div><h1>Let's talk about <span>your health.</span></h1><p class="subheading">Answer a few questions to create a clear health summary.</p></div>
+      <div class="chat-layout">
+        <div class="chat-panel">
+          <div class="chat-head"><div class="bot-avatar">✚</div><div><b>MediCare Assistant</b><small><span class="online-dot"></span> Guided health intake</small></div><span class="chat-badge">DEMO MODE</span></div>
+          <div class="chat-messages" id="messages"><div class="message bot"><div class="message-avatar">✚</div><div class="bubble"><b>Hi there! Welcome to MediCare AI.</b><p>I can help collect information about how you're feeling and prepare a summary you can share with a qualified healthcare professional.</p><p>First, what would you like help with today?</p></div></div></div>
+          <div class="quick-options" id="quickOptions"><button data-answer="I have a symptom I want to discuss">I have a symptom</button><button data-answer="I want to add my health history">Add health history</button><button data-answer="I want to record my blood pressure or sugar">Record my vitals</button></div>
+          <form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Type your response..." autocomplete="off"><button aria-label="Send message">➤</button></form>
+          <div class="chat-foot">MediCare AI is an educational prototype, not a medical professional.</div>
+        </div>
+        <aside class="chat-side"><div class="side-info"><span class="info-icon">✧</span><h3>What we'll cover</h3><ul><li>Current symptoms and when they started</li><li>Existing health conditions</li><li>Allergies and current medicines</li><li>Blood pressure or sugar readings</li></ul></div><div class="side-info safety"><span class="info-icon">♡</span><h3>Important safety note</h3><p>Do not delay urgent care to use this chat. For severe or rapidly worsening symptoms, seek immediate medical help.</p></div><button class="outline-btn" id="resetChat">↻ Start a new conversation</button></aside>
+      </div>
+    </section>
+
+    <section class="view" id="records">
+      <div class="page-heading"><div class="eyebrow">PERSONAL HEALTH SPACE</div><h1>Your health <span>records.</span></h1><p class="subheading">A simple place to review the details you've shared in this session.</p></div>
+      <div class="record-grid"><div class="panel record-main"><div class="panel-title"><div><h3>Personal information</h3><p>Details you choose to share.</p></div><span class="record-symbol">♙</span></div><div id="personalRecord" class="empty-state"><span>♙</span><b>No personal information yet</b><small>Start a health assessment to add your details.</small><button class="text-btn" data-go="assessment">Add information →</button></div></div>
+      <div class="panel"><div class="panel-title"><div><h3>Vitals</h3><p>Latest entries</p></div><span class="record-symbol mint">⌁</span></div><div id="vitalsRecord" class="empty-state compact"><span>⌁</span><b>No readings saved</b><small>Blood pressure and glucose readings will appear here.</small></div></div>
+      <div class="panel record-wide"><div class="panel-title"><div><h3>Health notes</h3><p>Symptoms, history and other details.</p></div><span class="record-symbol peach">▤</span></div><div id="notesRecord" class="empty-state compact"><span>▤</span><b>No notes yet</b><small>Your conversation summary will appear here.</small></div></div></div>
+      <div class="privacy-note">🔒 Demo privacy: records are saved in this browser's local storage. Clear this browser's site data to remove them.</div>
+    </section>
+
+    <section class="view" id="assessment">
+      <div class="page-heading"><div class="eyebrow">HEALTH ASSESSMENT</div><h1>Let's get to know <span>you.</span></h1><p class="subheading">Fill in what you're comfortable sharing. You can leave fields blank.</p></div>
+      <form id="assessmentForm" class="assessment-form">
+        <div class="panel form-panel"><div class="form-title"><span class="form-icon lavender">♙</span><div><h3>Basic information</h3><p>A little context helps organize your health notes.</p></div></div><div class="form-grid"><label>Preferred name<input name="name" placeholder="e.g. Alex"></label><label>Age<input name="age" type="number" min="1" max="120" placeholder="Your age"></label><label class="full">What would you like us to know?<textarea name="concern" rows="3" placeholder="Briefly describe what brings you here..."></textarea></label></div></div>
+        <div class="panel form-panel"><div class="form-title"><span class="form-icon mint">♡</span><div><h3>Medical history</h3><p>Share any relevant existing conditions.</p></div></div><div class="form-grid"><label class="full">Do you have any existing medical conditions?<textarea name="conditions" rows="2" placeholder="e.g. Diabetes, asthma, high blood pressure, or none"></textarea></label><label class="full">Do you have any allergies?<textarea name="allergies" rows="2" placeholder="Medicines, foods, or other allergies. Write 'not known' if unsure."></textarea></label><label class="full">Are you currently taking any medicines?<textarea name="medicines" rows="2" placeholder="List names if known, or write none/unsure."></textarea></label></div></div>
+        <div class="panel form-panel"><div class="form-title"><span class="form-icon peach">⌁</span><div><h3>Health measurements</h3><p>Optional readings. Enter only values you already know.</p></div></div><div class="form-grid"><label>Blood pressure<input name="bp" placeholder="e.g. 120/80 mmHg"></label><label>Blood sugar<input name="sugar" placeholder="e.g. 95 mg/dL"></label></div><div class="form-hint">Measurements are recorded as provided and are not interpreted as a diagnosis.</div></div>
+        <div class="form-actions"><span>Your entries stay in this browser for this demo.</span><button class="primary-btn">Save my health information <span>→</span></button></div>
+      </form>
+    </section>
+
+    <section class="view" id="about">
+      <div class="page-heading"><div class="eyebrow">ABOUT THE PROJECT</div><h1>Technology with <span>care.</span></h1><p class="subheading">MediCare AI is a student-friendly healthcare information and intake prototype.</p></div>
+      <div class="about-grid"><div class="panel about-feature"><div class="big-cross">✚</div><h2>Making health conversations easier.</h2><p>The goal is to help people organize symptoms, health history, allergies and basic measurements before speaking with a healthcare professional.</p></div><div class="panel"><h3>What this prototype can do</h3><ul class="feature-list"><li>Collect symptom descriptions through a guided chat</li><li>Save optional health profile details locally</li><li>Display a simple health information summary</li><li>Offer general educational safety guidance</li></ul></div><div class="panel disclaimer"><span>⚠</span><div><h3>Medical disclaimer</h3><p>This website is not a doctor, diagnostic device, emergency service, or pharmacy. It does not diagnose diseases, recommend individual medicines, calculate doses, or replace professional medical advice. Always consult a qualified healthcare professional for diagnosis and treatment.</p></div></div></div>
+    </section>
+    <footer>© 2026 MediCare AI <span>Designed for a healthier conversation.</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
